@@ -43,7 +43,7 @@ Git
 
 Installation
 # Clone the repo
-git clone https://github.com/your-username/SmartAgroConnect.git
+git clone https://https://github.com/Abhay167746/Smart-AgroConnect.git
 
 # Navigate to frontend
 cd frontend
