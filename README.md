@@ -1,70 +1,30 @@
-🌱 SmartAgroConnect
+🌱 Smart AgroConnect
 
-SmartAgroConnect is a blockchain + AI + IoT powered platform that connects farmers directly with consumers and businesses. It removes middlemen, ensures fair pricing, reduces food waste, and improves transparency in the food supply chain.
+Smart AgroConnect is a blockchain-powered platform that connects farmers, distributors, and consumers directly to ensure fair pricing, reduce food waste, and improve food quality tracking. By leveraging AI, IoT, and blockchain, the platform enables transparent supply chain management and smart decision-making for agriculture.
 
 🚀 Features
 
-📦 Direct Farmer-to-Consumer Selling – Eliminates middlemen and ensures farmers get fair prices.
+✅ Blockchain-based Transparency – Eliminates middlemen, ensures trust in transactions.
 
-🌾 IoT Integration – Simulated IoT sensors track food quality and freshness.
+📊 AI-powered Insights – Helps farmers predict demand and pricing trends.
 
-🤖 AI Module – Predicts demand, optimizes distribution, and reduces waste.
+🌐 IoT Integration – Collects real-time data on food quality & storage.
 
-🔗 Blockchain Smart Contracts – Secure and transparent transactions.
+🛒 Marketplace for Farmers & Consumers – Direct farm-to-consumer system.
 
-📊 Admin Dashboard – Real-time monitoring and issue tracking.
+🔒 Smart Contracts – Automates transactions securely.
 
-💳 Payment Integration – Supports secure online payments (Stripe).
 
 🛠️ Tech Stack
 
-Frontend: React + Vite + Tailwind CSS
+Frontend: React.js, TailwindCSS
 
-Backend: Node.js + Express
+Backend: Node.js, Express.js
 
 Database: MongoDB
 
-AI Module: Python (ML models for demand prediction & quality analysis)
+AI Module: Python (data insights)
 
-IoT Simulation: Node.js (sensor data simulation)
+IoT Data Feed: Simulated sensors
 
-Blockchain (Optional): Solidity Smart Contract (Ethereum testnet)
-
-⚡ Getting Started
-Prerequisites
-
-Node.js (>= 18)
-
-MongoDB (local or Atlas)
-
-Python (>= 3.9) with required ML libraries
-
-Git
-
-Installation
-# Clone the repo
-git clone https://https://github.com/Abhay167746/Smart-AgroConnect.git
-
-# Navigate to frontend
-cd frontend
-npm install
-npm run dev
-
-# Navigate to backend
-cd backend
-npm install
-npm start
-
-🎯 Future Scope
-
-Expand to real IoT device integration.
-
-Deploy smart contracts on Ethereum mainnet.
-
-AI-driven supply chain optimization.
-
-Multi-language & mobile app support.
-
-🤝 Contribution
-
-We welcome contributions! Feel free to fork this repo, raise issues, or submit pull requests.
+Blockchain (optional): Solidity + Smart Contracts
