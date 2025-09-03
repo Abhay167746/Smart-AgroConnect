@@ -1,10 +1,4 @@
-// function Login() {
-//   return (
-//     <div className="p-6 text-xl">🔐 Login Page</div>
-//   );
-// }
 
-// export default Login;
 import { useState } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";

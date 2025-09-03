@@ -1,10 +1,4 @@
-// function Dashboard() {
-//   return (
-//     <div className="p-6 text-xl">📊 This is the Dashboard Page</div>
-//   );
-// }
 
-// export default Dashboard;
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { getUserProduce } from "../services/ProduceService";

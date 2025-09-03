@@ -1,12 +1,4 @@
-// function Marketplace() {
-//   return (
-//     <div className="p-4 text-xl">
-//       🛒 This is the Marketplace Page
-//     </div>
-//   );
-// }
 
-// export default Marketplace; // ✅ Required!
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProduceCard from "../components/ProduceCard";

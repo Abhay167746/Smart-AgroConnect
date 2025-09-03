@@ -1,12 +1,4 @@
-// function CropPrediction() {
-//   return (
-//     <div className="p-4 text-xl">
-//       🌾 This is the Crop Prediction Page
-//     </div>
-//   );
-// }
 
-// export default CropPrediction; // ✅ This line is important!
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";

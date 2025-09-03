@@ -1,10 +1,4 @@
-// function Signup() {
-//   return (
-//     <div className="p-6 text-xl">📝 Signup Page</div>
-//   );
-// }
 
-// export default Signup;
 import { useState } from "react";
 import { auth, googleProvider } from "../firebase";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";

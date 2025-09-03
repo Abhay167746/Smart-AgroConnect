@@ -1,12 +1,4 @@
-// function ListProduce() {
-//   return (
-//     <div className="p-4 text-xl">
-//       📦 This is the List Produce Page
-//     </div>
-//   );
-// }
 
-// export default ListProduce;
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
