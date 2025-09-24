@@ -49,7 +49,7 @@ const CropPrediction = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/predict",
+        "http://localhost:5000/api/predict",
         inputs
       );
       let pred = response.data.prediction;
@@ -119,3 +119,4 @@ const CropPrediction = () => {
 };
 
 export default CropPrediction;
+

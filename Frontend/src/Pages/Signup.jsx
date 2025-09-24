@@ -1,22 +1,24 @@
-
 import { useState } from "react";
 import { auth, googleProvider } from "../firebase";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { toast } from "react-toastify";
 import GoogleButton from "react-google-button";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); // Make sure useNavigate is used
 
-  // email password signup function
+  // Email/password signup
   const handleSignup = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      toast.success("Signup successful!");
+      toast.success("Signup successful! Redirecting...");
+      navigate("/"); // Redirect to homepage
     } catch (error) {
       toast.error(error.message);
       console.error(error);
@@ -25,13 +27,18 @@ const Signup = () => {
     }
   };
 
-  // login with google
+  // Google signup/login
   const handleGoogleSignIn = async () => {
+    setLoading(true);
     try {
       await signInWithPopup(auth, googleProvider);
-      toast.success("Login successful!");
+      toast.success("Google login successful! Redirecting...");
+      navigate("/"); // Redirect to homepage
     } catch (error) {
       toast.error(error.message);
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -68,11 +75,13 @@ const Signup = () => {
             )}
           </button>
         </form>
+
         <div className="mt-3 flex items-center justify-center">
           <a href="/login" className="text-blue-500 hover:text-blue-600">
             Already have an account? Sign In
           </a>
         </div>
+
         <div className="mt-3 flex items-center justify-center">
           <GoogleButton onClick={handleGoogleSignIn} type="dark" />
         </div>

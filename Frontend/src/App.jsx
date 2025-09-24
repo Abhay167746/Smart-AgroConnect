@@ -1,69 +1,38 @@
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
-import Signup from "./Pages/Signup";
-import Login from "./Pages/Login";
-import ListProduce from "./Pages/ListProduce";
-import Dashboard from "./Pages/Dashboard"; 
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+
+import Header from './components/Shared/Header/Header';
+import Footer from './components/Shared/Footer/Footer';
+import Home from "./Pages/Home";
 import Marketplace from "./Pages/Marketplace";
-import CropPrediction from "./Pages/CropPrediction"; 
-import LearningHub from "./Pages/LearningHub"; 
-import ProtectedRoute from "./components/ProtectedRoute";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import LearningHub from "./Pages/LearningHub";
+import CropPrediction from "./Pages/CropPrediction";
+import ListProduce from "./Pages/ListProduce";
+import Login from "./Pages/Login";
+import SignUp from "./Pages/Signup"; 
+
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <ToastContainer position="top-right" autoClose={3000} />
+    <div className="App bg-light-bg">
+      <Header />
+      <main className="pt-20">
         <Routes>
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/marketplace" element={<Marketplace />} />
+          <Route path="/learning-hub" element={<LearningHub />} />
+          <Route path="/crop-prediction" element={<CropPrediction />} />
+          {/* <Route path="/list-produce" element={<ListProduce />} /> */}
+          <Route path="/marketplace/list" element={<ListProduce />} />
           <Route path="/login" element={<Login />} />
-          {/* Protected Routes */}
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/marketplace"
-            element={
-              <ProtectedRoute>
-                <Marketplace />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/marketplace/list"
-            element={
-              <ProtectedRoute>
-                <ListProduce />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/crop-prediction"
-            element={
-              <ProtectedRoute>
-                <CropPrediction />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/learning-hub"
-            element={
-              <ProtectedRoute>
-                <LearningHub />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
-      </Router>
-    </AuthProvider>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
 export default App;
+

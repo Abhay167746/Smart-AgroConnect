@@ -7,6 +7,7 @@ import { useAuth } from "../context/AuthContext";
 
 const ListProduce = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     crop: "",
@@ -15,8 +16,6 @@ const ListProduce = () => {
     location: "",
   });
 
-  const navigate = useNavigate();
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -24,6 +23,7 @@ const ListProduce = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!form.crop || !form.quantity || !form.price || !form.location) {
       toast.error("Please fill all fields");
       return;
@@ -35,17 +35,19 @@ const ListProduce = () => {
       userName: user?.displayName || user?.email || "Anonymous",
     };
 
-    await listProduce(payload);
-    toast.success("Produce listed!");
-    navigate("/marketplace");
+    try {
+      await listProduce(payload);
+      toast.success("Produce listed successfully!");
+      navigate("/marketplace");
+    } catch (error) {
+      console.error("Error listing produce:", error);
+      toast.error("Failed to list produce. Try again!");
+    }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-green-50 p-4">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white shadow-lg p-8 rounded-2xl w-full max-w-lg"
-      >
+    <div className="min-h-screen bg-green-50 pt-28 px-4">
+      <div className="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg">
         <h2 className="text-2xl font-bold text-green-600 mb-6 text-center">
           List Your Produce
         </h2>
@@ -75,7 +77,7 @@ const ListProduce = () => {
         >
           List Crop
         </button>
-      </form>
+      </div>
     </div>
   );
 };

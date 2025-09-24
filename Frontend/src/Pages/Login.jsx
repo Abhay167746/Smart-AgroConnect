@@ -1,13 +1,15 @@
-
 import { useState } from "react";
-import { auth } from "../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, googleProvider } from "../firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { toast } from "react-toastify";
 import GoogleButton from "react-google-button";
+import { useNavigate } from "react-router-dom"; 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); 
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -15,6 +17,7 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       toast.success("Login successful!");
+      navigate("/"); 
     } catch (error) {
       toast.error(error.message);
     } finally {
@@ -26,6 +29,7 @@ const Login = () => {
     try {
       await signInWithPopup(auth, googleProvider);
       toast.success("Login successful!");
+      navigate("/"); 
     } catch (error) {
       toast.error(error.message);
     }
